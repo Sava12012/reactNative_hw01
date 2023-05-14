@@ -48,7 +48,7 @@ const LoginScreen = () => {
 
   const onLogin = () => {
     if (!email.trim() || !password.trim()) {
-      Alert.alert(`Усі поля мають бути заповнені!`);
+      Alert.alert(`Не заповнено поле!`);
       return;
     }
     Alert.alert(`${email}, успішно увійшли!`);
@@ -98,7 +98,7 @@ const LoginScreen = () => {
               width: phoneWidth,
               height: phoneHeidth,
             }}
-            source={require("../../../assets/images/bgImage.png")}
+            source={require("../../assets/images/123.jpg")}
           >
             <ScrollView>
               <View
