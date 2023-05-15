@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { styles } from "./Screens.styles";
+// import { ScrollView } from "react-native-web";
 
 const initialState = {
   login: "",
@@ -20,6 +21,11 @@ const initialState = {
 
 const RegistrationScreen = () => {
   const [state, setState] = useState(initialState);
+  const [focusLogin, setFocusLogin] = useState(false);
+
+  const [focusEmail, setIsFocusEmail] = useState(false);
+
+  const [focusPassword, setFocusPassword] = useState(false);
 
   const loginHandler = (value) =>
     setState((prevState) => ({
@@ -77,30 +83,46 @@ const RegistrationScreen = () => {
                 value={state.login}
                 onChangeText={loginHandler}
                 placeholder="Login"
-                style={styles.input}
+                style={{
+                  ...styles.input,
+                  borderColor: focusLogin ? "#FF6C00" : "#E8E8E8",
+                }}
+                onFocus={() => setFocusLogin(true)}
+                onBlur={() => setFocusLogin(false)}
               />
               <TextInput
                 value={state.email}
                 onChangeText={nameHandler}
                 placeholder="Username"
-                style={styles.input}
+                style={{
+                  ...styles.input,
+                  borderColor: focusEmail ? "#FF6C00" : "#E8E8E8",
+                }}
+                onFocus={() => setIsFocusEmail(true)}
+                onBlur={() => setIsFocusEmail(false)}
               />
               <TextInput
                 value={state.password}
                 onChangeText={passwordHandler}
                 placeholder="Password"
                 secureTextEntry={true}
-                style={styles.input}
+                style={{
+                  ...styles.input,
+                  borderColor: focusPassword ? "#FF6C00" : "#E8E8E8",
+                }}
+                onFocus={() => setFocusPassword(true)}
+                onBlur={() => setFocusPassword(false)}
               />
-              <Pressable
-                title={"Register"}
-                style={styles.button}
-                onPress={onRegistration}
-              >
-                <TouchableOpacity>
+              <TouchableOpacity>
+                <Pressable
+                  title={"Register"}
+                  style={styles.button}
+                  onPress={onRegistration}
+                >
                   <Text>Зареєструватись</Text>
-                </TouchableOpacity>
-              </Pressable>
+                </Pressable>
+              </TouchableOpacity>
+
               <TouchableOpacity>
                 <Text>Вже є акаунт? Увійти</Text>
               </TouchableOpacity>
