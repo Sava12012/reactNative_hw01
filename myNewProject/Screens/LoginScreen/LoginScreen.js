@@ -109,7 +109,7 @@ const LoginScreen = () => {
                 }}
               >
                 <View style={{ width: phoneWidth - 16 * 2 }}>
-                  <Text style={styles.title}>Login</Text>
+                  <Text style={styles.title}>Вхід</Text>
 
                   <TextInput
                     style={{
