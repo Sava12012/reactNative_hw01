@@ -5,7 +5,7 @@ export default function App() {
   return (
     <>
       <RegistrationScreen />
-      <LoginScreen />
+      {/* <LoginScreen /> */}
     </>
   );
 }

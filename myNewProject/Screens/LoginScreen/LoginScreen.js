@@ -109,7 +109,7 @@ const LoginScreen = () => {
                 }}
               >
                 <View style={{ width: phoneWidth - 16 * 2 }}>
-                  <Text style={styles.title}>Увійти</Text>
+                  <Text style={styles.title}>Login</Text>
 
                   <TextInput
                     style={{
@@ -119,7 +119,7 @@ const LoginScreen = () => {
                     onFocus={() => setIsFocusEmail(true)}
                     onBlur={() => setIsFocusEmail(false)}
                     value={email}
-                    placeholder="Адрес электронной почты"
+                    placeholder="Адреса електронної пошти"
                     cursorColor={"#BDBDBD"}
                     placeholderTextColor={"#BDBDBD"}
                     onChangeText={emailSave}
@@ -147,7 +147,7 @@ const LoginScreen = () => {
                     }
                   >
                     <Text style={styles.isPasswordShow}>
-                      {isPasswordHidden ? "Показать" : "Скрыть"}
+                      {isPasswordHidden ? "Показать" : "Сховати"}
                     </Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.button} onPress={onLogin}>

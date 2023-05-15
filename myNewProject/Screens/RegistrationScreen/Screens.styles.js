@@ -1,14 +1,30 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  containerFlex: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  backgroundImg: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "flex-end",
+  },
   regInputs: {
     display: "flex",
     position: "relative",
-    height: "80%",
+    // height: "80%",
     minWidth: "100%",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "white",
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    height: 550,
   },
 
   textPosition: {
@@ -44,7 +60,7 @@ export const styles = StyleSheet.create({
     minHeight: 120,
     minWidth: 120,
     position: "absolute",
-    top: -120,
+    top: -60,
     borderRadius: 16,
     backgroundColor: "#F6F6F6",
   },
