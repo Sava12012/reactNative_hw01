@@ -1,8 +1,8 @@
 import React from "react";
-
 import { View, Pressable, Image, ImageBackground } from "react-native";
-import { styles } from "./Screens.styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+import { styles } from "../Screens.styles";
 
 const ProfileScreen = ({ navigation }) => {
   return (

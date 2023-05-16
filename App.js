@@ -10,10 +10,33 @@ import Home from "./Screens/Home/Home";
 import RegistrationScreen from "./Screens/RegistrationScreen/RegistrationScreen";
 
 export default function App() {
+  const MainStack = createStackNavigator();
+
   return (
-    <>
-      <RegistrationScreen />
-      {/* <LoginScreen /> */}
-    </>
+    <NavigationContainer>
+      <MainStack.Navigator initialRouteName="Registration">
+        <MainStack.Screen
+          name="Registration"
+          component={RegistrationScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <MainStack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <MainStack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </MainStack.Navigator>
+    </NavigationContainer>
   );
 }

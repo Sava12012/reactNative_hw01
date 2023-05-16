@@ -1,10 +1,10 @@
 import React from "react";
-import PostScreen from "./PostsScreen";
-import CreatePostsScreen from "./CreatePostsScreen";
-import ProfileScreen from "./ProfileScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import { Pressable } from "react-native";
+import PostScreen from "../Posts/PostsScreen";
+import CreatePostsScreen from "../CreatePostsScreen/CreatePostsScreen";
+import ProfileScreen from "../ProfileScreen/ProfileScreen";
 
 const MainTab = createBottomTabNavigator();
 
