@@ -74,9 +74,7 @@ const RegistrationScreen = () => {
                 </View>
               </Pressable>
               <View style={styles.textPosition}>
-                <Text style={{ fontFamily: "RobotoBold", fontSize: 30 }}>
-                  Реєстрація
-                </Text>
+                <Text>Реєстрація</Text>
               </View>
 
               <TextInput
