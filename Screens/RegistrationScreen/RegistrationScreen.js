@@ -6,9 +6,10 @@ import {
   Pressable,
   Image,
   Keyboard,
+  Platform,
+  TouchableWithoutFeedback,
   ImageBackground,
   KeyboardAvoidingView,
-  TouchableOpacity,
 } from "react-native";
 import { styles } from "./Screens.styles";
 // import { ScrollView } from "react-native-web";
@@ -50,85 +51,87 @@ const RegistrationScreen = () => {
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.container}
-    >
-      <View style={styles.containerFlex}>
-        <ImageBackground
-          style={styles.backgroundImg}
-          source={require("../../assets/images/123.jpg")}
-        >
-          <View>
-            <View style={styles.regInputs}>
-              <View style={styles.avatarPlace}>
-                <Image source={require("../../assets/images/add.svg")} />
-              </View>
-              <Pressable
-                title={"Login"}
-                style={styles.add}
-                onPress={() => alert("This is a pick photo button!")}
-              >
-                <View>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.container}
+      >
+        <View style={styles.containerFlex}>
+          <ImageBackground
+            style={styles.backgroundImg}
+            source={require("../../assets/images/123.jpg")}
+          >
+            <View>
+              <View style={styles.regInputs}>
+                <View style={styles.avatarPlace}>
                   <Image source={require("../../assets/images/add.svg")} />
                 </View>
-              </Pressable>
-              <View style={styles.textPosition}>
-                <Text>Реєстрація</Text>
-              </View>
-
-              <TextInput
-                value={state.login}
-                onChangeText={loginHandler}
-                placeholder="Login"
-                style={{
-                  ...styles.input,
-                  borderColor: focusLogin ? "#FF6C00" : "#E8E8E8",
-                }}
-                onFocus={() => setFocusLogin(true)}
-                onBlur={() => setFocusLogin(false)}
-              />
-              <TextInput
-                value={state.email}
-                onChangeText={nameHandler}
-                placeholder="Username"
-                style={{
-                  ...styles.input,
-                  borderColor: focusEmail ? "#FF6C00" : "#E8E8E8",
-                }}
-                onFocus={() => setIsFocusEmail(true)}
-                onBlur={() => setIsFocusEmail(false)}
-              />
-              <TextInput
-                value={state.password}
-                onChangeText={passwordHandler}
-                placeholder="Password"
-                secureTextEntry={true}
-                style={{
-                  ...styles.input,
-                  borderColor: focusPassword ? "#FF6C00" : "#E8E8E8",
-                }}
-                onFocus={() => setFocusPassword(true)}
-                onBlur={() => setFocusPassword(false)}
-              />
-              <TouchableOpacity>
                 <Pressable
-                  title={"Register"}
-                  style={styles.button}
-                  onPress={onRegistration}
+                  title={"Login"}
+                  style={styles.add}
+                  onPress={() => alert("This is a pick photo button!")}
                 >
-                  <Text>Зареєструватись</Text>
+                  <View>
+                    <Image source={require("../../assets/images/add.svg")} />
+                  </View>
                 </Pressable>
-              </TouchableOpacity>
+                <View style={styles.textPosition}>
+                  <Text>Реєстрація</Text>
+                </View>
 
-              <TouchableOpacity>
-                <Text>Вже є акаунт? Увійти</Text>
-              </TouchableOpacity>
+                <TextInput
+                  value={state.login}
+                  onChangeText={loginHandler}
+                  placeholder="Login"
+                  style={{
+                    ...styles.input,
+                    borderColor: focusLogin ? "#FF6C00" : "#E8E8E8",
+                  }}
+                  onFocus={() => setFocusLogin(true)}
+                  onBlur={() => setFocusLogin(false)}
+                />
+                <TextInput
+                  value={state.email}
+                  onChangeText={nameHandler}
+                  placeholder="Username"
+                  style={{
+                    ...styles.input,
+                    borderColor: focusEmail ? "#FF6C00" : "#E8E8E8",
+                  }}
+                  onFocus={() => setIsFocusEmail(true)}
+                  onBlur={() => setIsFocusEmail(false)}
+                />
+                <TextInput
+                  value={state.password}
+                  onChangeText={passwordHandler}
+                  placeholder="Password"
+                  secureTextEntry={true}
+                  style={{
+                    ...styles.input,
+                    borderColor: focusPassword ? "#FF6C00" : "#E8E8E8",
+                  }}
+                  onFocus={() => setFocusPassword(true)}
+                  onBlur={() => setFocusPassword(false)}
+                />
+                <TouchableOpacity>
+                  <Pressable
+                    title={"Register"}
+                    style={styles.button}
+                    onPress={onRegistration}
+                  >
+                    <Text>Зареєструватись</Text>
+                  </Pressable>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                  <Text>Вже є акаунт? Увійти</Text>
+                </TouchableOpacity>
+              </View>
             </View>
-          </View>
-        </ImageBackground>
-      </View>
-    </KeyboardAvoidingView>
+          </ImageBackground>
+        </View>
+      </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
   );
 };
 
